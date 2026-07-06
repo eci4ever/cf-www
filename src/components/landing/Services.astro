@@ -1,0 +1,60 @@
+---
+import ServiceCard from "./ServiceCard.astro";
+
+const services = [
+  {
+    title: "Software Development",
+    description:
+      "Custom web apps, SaaS platforms, admin systems, APIs, dashboards, and internal tools built with modern full-stack technologies.",
+    icon: "code",
+  },
+  {
+    title: "AI Platform",
+    description:
+      "AI-powered workflows, chatbots, automation tools, data processing, and intelligent assistants for business operations.",
+    icon: "spark",
+  },
+  {
+    title: "Web and Cloud Hosting",
+    description:
+      "Reliable hosting for websites, apps, APIs, and cloud-native services with scalable infrastructure and deployment support.",
+    icon: "cloud",
+  },
+  {
+    title: "Web Services",
+    description:
+      "Domain setup, email configuration, website maintenance, integrations, API development, analytics, and performance optimization.",
+    icon: "globe",
+  },
+  {
+    title: "Cybersecurity",
+    description:
+      "Security hardening, vulnerability assessment, access control, monitoring, secure configuration, and best-practice protection for modern systems.",
+    icon: "shield",
+  },
+];
+---
+
+<section id="services" class="relative px-4 py-24 sm:py-32">
+  <div class="mx-auto max-w-6xl">
+    <div class="mx-auto mb-16 max-w-3xl text-center">
+      <h2 class="mb-4 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+        Everything you need to build modern digital platforms.
+      </h2>
+      <p class="text-lg leading-relaxed text-slate-400">
+        From custom software to AI automation, cloud hosting, web services, and cybersecurity, Nimfi.dev helps teams move from idea to production with confidence.
+      </p>
+    </div>
+
+    <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {services.slice(0, 3).map((service) => (
+        <ServiceCard title={service.title} description={service.description} icon={service.icon} />
+      ))}
+    </div>
+    <div class="mt-5 grid gap-5 sm:grid-cols-2">
+      {services.slice(3).map((service) => (
+        <ServiceCard title={service.title} description={service.description} icon={service.icon} />
+      ))}
+    </div>
+  </div>
+</section>

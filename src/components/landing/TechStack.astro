@@ -1,0 +1,36 @@
+---
+const technologies = [
+  "Astro",
+  "React",
+  "TanStack",
+  "Hono",
+  "Node.js",
+  "TypeScript",
+  "PostgreSQL",
+  "Drizzle ORM",
+  "Cloudflare",
+  "Vercel",
+  "Docker",
+  "Linux",
+  "AI APIs",
+  "Cybersecurity",
+];
+---
+
+<section class="relative px-4 py-24 sm:py-32">
+  <div class="mx-auto max-w-6xl">
+    <div class="mx-auto mb-12 max-w-3xl text-center">
+      <h2 class="mb-4 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+        Modern tools for modern platforms.
+      </h2>
+    </div>
+
+    <div class="flex flex-wrap justify-center gap-3">
+      {technologies.map((tech) => (
+        <span class="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-300 transition-all duration-300 hover:border-white/20 hover:bg-white/10 hover:text-white">
+          {tech}
+        </span>
+      ))}
+    </div>
+  </div>
+</section>
