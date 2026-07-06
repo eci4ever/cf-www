@@ -3,22 +3,69 @@ export interface Props {
   title?: string;
   description?: string;
   ogImage?: string;
+  keywords?: string;
 }
 
-const { title = "Nimfi.dev — Build smarter. Host faster. Secure everything.", description = "Modern software development, AI platform, cloud hosting, web services, and cybersecurity solutions with a developer-first approach.", ogImage = "/og.png" } = Astro.props;
+const {
+  title = "Nimfi.dev — Build smarter. Host faster.",
+  description = "Modern software development, AI platform, cloud hosting, web services, and cybersecurity solutions with a developer-first approach.",
+  ogImage = "/og.svg",
+  keywords = "Nimfi, software development, AI platform, cloud hosting, web services, cybersecurity, developer platform, digital solutions",
+} = Astro.props;
 
 const siteName = "Nimfi.dev";
 const fullTitle = title.includes("Nimfi.dev") ? title : `${title} | ${siteName}`;
+const url = new URL(Astro.url);
+const origin = url.origin;
+
+const schemaOrg = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${origin}/#organization`,
+      name: "Nimfi.dev",
+      url: origin,
+      description,
+      slogan: "Build smarter. Host faster.",
+      foundingDate: "2025",
+      contactPoint: {
+        "@type": "ContactPoint",
+        contactType: "sales",
+        url: `${origin}/#contact`,
+      },
+      sameAs: [],
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${origin}/#website`,
+      url: origin,
+      name: fullTitle,
+      description,
+      publisher: { "@id": `${origin}/#organization` },
+      inLanguage: "en",
+    },
+  ],
+};
 ---
 
 <meta name="description" content={description} />
+<meta name="keywords" content={keywords} />
+
 <meta property="og:type" content="website" />
 <meta property="og:title" content={fullTitle} />
 <meta property="og:description" content={description} />
-<meta property="og:image" content={ogImage} />
+<meta property="og:image" content={new URL(ogImage, origin).href} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
 <meta property="og:site_name" content={siteName} />
+<meta property="og:url" content={url.href} />
+
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content={fullTitle} />
 <meta name="twitter:description" content={description} />
-<meta name="twitter:image" content={ogImage} />
-<link rel="canonical" href={Astro.url} />
+<meta name="twitter:image" content={new URL(ogImage, origin).href} />
+
+<link rel="canonical" href={url.href} />
+
+<script type="application/ld+json" set:html={JSON.stringify(schemaOrg)} />
