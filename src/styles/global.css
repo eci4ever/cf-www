@@ -6,12 +6,66 @@
 @import "@fontsource/jetbrains-mono/400.css";
 @import "@fontsource/jetbrains-mono/500.css";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  color-scheme: light;
+
+  --page: #f6f7f9;
+  --surface: #ffffff;
+  --surface-hover: #eef1f5;
+  --surface-strong: #f1f5f9;
+  --border: rgba(15, 23, 42, 0.1);
+  --border-hover: rgba(15, 23, 42, 0.2);
+  --border-faint: rgba(15, 23, 42, 0.06);
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --text-faint: #94a3b8;
+  --text-fainter: #94a3b8;
+  --text-decorative: rgba(15, 23, 42, 0.16);
+  --accent: #0891b2;
+  --accent-soft: rgba(8, 145, 178, 0.1);
+  --purple-accent: #7c3aed;
+  --purple-soft: rgba(124, 58, 237, 0.1);
+  --blue-accent: #2563eb;
+  --blue-soft: rgba(37, 99, 235, 0.1);
+  --success: #059669;
+  --success-soft: rgba(5, 150, 105, 0.1);
+}
+
+.dark {
+  color-scheme: dark;
+
+  --page: #0a0a0a;
+  --surface: rgba(255, 255, 255, 0.04);
+  --surface-hover: rgba(255, 255, 255, 0.08);
+  --surface-strong: rgba(255, 255, 255, 0.03);
+  --border: rgba(255, 255, 255, 0.1);
+  --border-hover: rgba(255, 255, 255, 0.2);
+  --border-faint: rgba(255, 255, 255, 0.05);
+  --text-primary: #ffffff;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --text-faint: #64748b;
+  --text-fainter: #475569;
+  --text-decorative: rgba(255, 255, 255, 0.2);
+  --accent: #22d3ee;
+  --accent-soft: rgba(34, 211, 238, 0.12);
+  --purple-accent: #c084fc;
+  --purple-soft: rgba(192, 132, 252, 0.15);
+  --blue-accent: #60a5fa;
+  --blue-soft: rgba(96, 165, 250, 0.12);
+  --success: #34d399;
+  --success-soft: rgba(52, 211, 153, 0.1);
+}
+
 @theme {
   --font-family-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-family-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 
   --color-nimfi-950: #050505;
-  --color-nimfi-900: #0A0A0A;
+  --color-nimfi-900: #0a0a0a;
   --color-nimfi-800: #111111;
   --color-nimfi-700: #1a1a1a;
   --color-nimfi-600: #222222;
@@ -35,20 +89,32 @@
   --color-green-400: #34d399;
   --color-green-300: #6ee7b7;
 
-  --color-surface: #111111;
-  --color-surface-hover: #1a1a1a;
-  --color-border: rgba(255, 255, 255, 0.08);
-  --color-border-hover: rgba(255, 255, 255, 0.15);
-  --color-glass: rgba(255, 255, 255, 0.04);
-  --color-glass-hover: rgba(255, 255, 255, 0.08);
-  --color-text-primary: #ffffff;
-  --color-text-secondary: #a0a0a0;
-  --color-text-muted: #666666;
-  --color-accent: #22d3ee;
-  --color-accent-soft: rgba(34, 211, 238, 0.12);
-
   --radius-card: 1rem;
   --radius-pill: 9999px;
+}
+
+@theme inline {
+  --color-page: var(--page);
+  --color-surface: var(--surface);
+  --color-surface-hover: var(--surface-hover);
+  --color-surface-strong: var(--surface-strong);
+  --color-border: var(--border);
+  --color-border-hover: var(--border-hover);
+  --color-border-faint: var(--border-faint);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-text-faint: var(--text-faint);
+  --color-text-fainter: var(--text-fainter);
+  --color-text-decorative: var(--text-decorative);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-purple-accent: var(--purple-accent);
+  --color-purple-soft: var(--purple-soft);
+  --color-blue-accent: var(--blue-accent);
+  --color-blue-soft: var(--blue-soft);
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
 }
 
 @layer base {
@@ -57,16 +123,16 @@
   }
 
   body {
-    background-color: var(--color-nimfi-900);
-    color: var(--color-text-primary);
+    background-color: var(--page);
+    color: var(--text-primary);
     font-family: var(--font-family-sans);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
   ::selection {
-    background-color: rgba(34, 211, 238, 0.2);
-    color: #ffffff;
+    background-color: rgba(34, 211, 238, 0.25);
+    color: var(--text-primary);
   }
 
   ::-webkit-scrollbar {
@@ -74,15 +140,15 @@
   }
 
   ::-webkit-scrollbar-track {
-    background: var(--color-nimfi-900);
+    background: var(--page);
   }
 
   ::-webkit-scrollbar-thumb {
-    background: var(--color-nimfi-500);
+    background: var(--border-hover);
     border-radius: 4px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: var(--color-nimfi-400);
+    background: var(--text-faint);
   }
 }
