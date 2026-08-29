@@ -1,0 +1,121 @@
+/* ============================================================
+   Nimfi.dev theme for shadcn/ui projects
+   Salin kandungan file ini ke dalam globals.css (atau index.css)
+   app shadcn anda, dan gantikan variable yang sedia ada.
+
+   Keperluan:
+   - Tailwind v4: pastikan ada `@custom-variant dark`
+   - Tailwind v3: gunakan `darkMode: "class"` dalam tailwind.config
+   ============================================================ */
+
+@import "tailwindcss";
+
+/* Dark mode class-based (Tailwind v4).
+   Untuk Tailwind v3, tetapkan `darkMode: "class"` dalam config. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ---------- Light ---------- */
+:root {
+  --background: #f6f7f9; /* page */
+  --foreground: #0f172a; /* text-primary */
+
+  --card: #ffffff; /* surface */
+  --card-foreground: #0f172a;
+
+  --popover: #ffffff;
+  --popover-foreground: #0f172a;
+
+  /* Brand color = cyan nimfi, lebih gelap untuk kontras atas light */
+  --primary: #0891b2;
+  --primary-foreground: #ffffff;
+
+  /* --accent dalam shadcn = hover surface neutral, BUKAN cyan */
+  --secondary: #f1f5f9;
+  --secondary-foreground: #0f172a;
+
+  --muted: #eef1f5; /* surface-hover */
+  --muted-foreground: #64748b; /* text-muted */
+
+  --accent: #eef1f5;
+  --accent-foreground: #0f172a;
+
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+
+  --border: #0f172a1a; /* rgba(15,23,42,.1) */
+  --input: #0f172a1a;
+  --ring: #0891b2;
+
+  --radius: 1rem;
+
+  --chart-1: #0891b2;
+  --chart-2: #2563eb;
+  --chart-3: #7c3aed;
+  --chart-4: #059669;
+  --chart-5: #f59e0b;
+
+  --sidebar: #ffffff;
+  --sidebar-foreground: #0f172a;
+  --sidebar-primary: #0891b2;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #eef1f5;
+  --sidebar-accent-foreground: #0f172a;
+  --sidebar-border: #0f172a1a;
+  --sidebar-ring: #0891b2;
+}
+
+/* ---------- Dark ---------- */
+.dark {
+  --background: #0a0a0a; /* page */
+  --foreground: #ffffff; /* text-primary */
+
+  --card: #ffffff0a; /* rgba(255,255,255,.04) surface */
+  --card-foreground: #ffffff;
+
+  --popover: #111111;
+  --popover-foreground: #ffffff;
+
+  --primary: #22d3ee; /* cyan */
+  --primary-foreground: #0a0a0a;
+
+  --secondary: #ffffff08; /* rgba(255,255,255,.03) */
+  --secondary-foreground: #ffffff;
+
+  --muted: #ffffff14; /* rgba(255,255,255,.08) */
+  --muted-foreground: #94a3b8; /* text-muted */
+
+  --accent: #ffffff14;
+  --accent-foreground: #ffffff;
+
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+
+  --border: #ffffff1a; /* rgba(255,255,255,.1) */
+  --input: #ffffff1a;
+  --ring: #22d3ee;
+
+  --chart-1: #22d3ee;
+  --chart-2: #60a5fa;
+  --chart-3: #c084fc;
+  --chart-4: #34d399;
+  --chart-5: #fbbf24;
+
+  --sidebar: #0a0a0a;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #22d3ee;
+  --sidebar-primary-foreground: #0a0a0a;
+  --sidebar-accent: #ffffff14;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #ffffff1a;
+  --sidebar-ring: #22d3ee;
+}
+
+/* ---------- Base ---------- */
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
