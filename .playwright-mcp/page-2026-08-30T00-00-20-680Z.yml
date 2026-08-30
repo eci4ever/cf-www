@@ -1,0 +1,308 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e4]:
+      - link "nimfi.dev" [ref=e5] [cursor=pointer]:
+        - /url: /
+      - generic [ref=e6]:
+        - link "Services" [ref=e7] [cursor=pointer]:
+          - /url: "#services"
+        - link "AI Platform" [ref=e8] [cursor=pointer]:
+          - /url: "#ai-platform"
+        - link "Hosting" [ref=e9] [cursor=pointer]:
+          - /url: "#hosting"
+        - link "Work" [ref=e10] [cursor=pointer]:
+          - /url: "#work"
+        - link "Contact" [ref=e11] [cursor=pointer]:
+          - /url: "#contact"
+      - generic [ref=e12]:
+        - link "Projects" [ref=e14] [cursor=pointer]:
+          - /url: "#projects"
+        - button "Toggle theme" [ref=e18]
+  - generic [ref=e21]:
+    - generic [ref=e22]:
+      - generic [ref=e23]: Developer-first digital solutions platform
+      - heading "AI that works for businesses." [level=1] [ref=e25]
+      - paragraph [ref=e26]: Nimfi.dev helps businesses build modern software, AI-powered platforms, cloud hosting environments, web services, and cybersecurity solutions with a developer-first approach.
+      - generic [ref=e27]:
+        - link "Get Started" [ref=e28] [cursor=pointer]:
+          - /url: "#cta"
+        - link "Explore Services" [ref=e31] [cursor=pointer]:
+          - /url: "#services"
+      - generic [ref=e32]:
+        - link "Project Prepaid AI API Access app.nimfi.dev" [ref=e33] [cursor=pointer]:
+          - /url: https://app.nimfi.dev
+          - generic [ref=e34]: Project
+          - generic [ref=e35]: Prepaid AI API Access
+          - generic [ref=e36]: app.nimfi.dev
+        - link "Project Emasa emasa.nimfi.dev" [ref=e37] [cursor=pointer]:
+          - /url: https://emasa.nimfi.dev
+          - generic [ref=e38]: Project
+          - generic [ref=e39]: Emasa
+          - generic [ref=e40]: emasa.nimfi.dev
+    - generic [ref=e43]:
+      - generic [ref=e44]: nimfi — dashboard
+      - generic [ref=e49]:
+        - generic [ref=e50]:
+          - generic [ref=e51]:
+            - generic [ref=e52]: Deployment Status
+            - generic [ref=e53]: Live
+          - generic [ref=e55]:
+            - generic [ref=e56]: AI Workflow
+            - generic [ref=e57]: Active
+          - generic [ref=e59]:
+            - generic [ref=e60]: Security Score
+            - generic [ref=e61]: 98%
+        - generic [ref=e62]:
+          - generic [ref=e63]:
+            - generic [ref=e64]: Cloud Region
+            - generic [ref=e65]: Southeast Asia
+          - generic [ref=e66]:
+            - generic [ref=e67]: API Latency
+            - generic [ref=e68]: 42ms
+          - generic [ref=e69]:
+            - generic [ref=e70]: Uptime
+            - generic [ref=e71]: 99.9%
+      - generic [ref=e72]:
+        - generic [ref=e73]: $ nimfi deploy --cloud --secure --ai-enabled
+        - generic [ref=e74]: ✓ Deploying to Southeast Asia region...
+        - generic [ref=e75]: ✓ SSL configured
+        - generic [ref=e76]: ✓ AI workflow attached
+        - generic [ref=e77]: ✓ Deployment complete (42ms)
+  - generic [ref=e79]:
+    - generic [ref=e80]:
+      - heading "Everything you need to build modern digital platforms." [level=2] [ref=e81]
+      - paragraph [ref=e82]: From custom software to AI automation, cloud hosting, web services, and cybersecurity, Nimfi.dev helps teams move from idea to production with confidence.
+    - generic [ref=e83]:
+      - generic [ref=e84]:
+        - heading "Software Development" [level=3] [ref=e88]
+        - paragraph [ref=e89]: Custom web apps, SaaS platforms, admin systems, APIs, dashboards, and internal tools built with modern full-stack technologies.
+      - generic [ref=e90]:
+        - heading "AI Platform" [level=3] [ref=e94]
+        - paragraph [ref=e95]: AI-powered workflows, chatbots, automation tools, data processing, and intelligent assistants for business operations.
+      - generic [ref=e96]:
+        - heading "Web and Cloud Hosting" [level=3] [ref=e100]
+        - paragraph [ref=e101]: Reliable hosting for websites, apps, APIs, and cloud-native services with scalable infrastructure and deployment support.
+    - generic [ref=e102]:
+      - generic [ref=e103]:
+        - heading "Web Services" [level=3] [ref=e107]
+        - paragraph [ref=e108]: Domain setup, email configuration, website maintenance, integrations, API development, analytics, and performance optimization.
+      - generic [ref=e109]:
+        - heading "Cybersecurity" [level=3] [ref=e113]
+        - paragraph [ref=e114]: Security hardening, vulnerability assessment, access control, monitoring, secure configuration, and best-practice protection for modern systems.
+  - generic [ref=e116]:
+    - generic [ref=e117]:
+      - heading "From idea to secure production." [level=2] [ref=e118]
+      - paragraph [ref=e119]: A clear technical workflow designed to help businesses plan, build, launch, and protect their digital products.
+    - generic [ref=e120]:
+      - generic [ref=e121]:
+        - generic [ref=e122]: "01"
+        - heading "Discover" [level=3] [ref=e123]
+        - paragraph [ref=e124]: Plan the product, requirements, users, architecture, and technical direction.
+      - generic [ref=e128]:
+        - generic [ref=e129]: "02"
+        - heading "Build" [level=3] [ref=e130]
+        - paragraph [ref=e131]: Develop the software, platform, API, website, dashboard, or automation workflow.
+      - generic [ref=e135]:
+        - generic [ref=e136]: "03"
+        - heading "Deploy" [level=3] [ref=e137]
+        - paragraph [ref=e138]: Launch on reliable web or cloud hosting with performance and scalability in mind.
+      - generic [ref=e142]:
+        - generic [ref=e143]: "04"
+        - heading "Secure" [level=3] [ref=e144]
+        - paragraph [ref=e145]: Apply cybersecurity best practices, access control, monitoring, and system hardening.
+      - generic [ref=e149]:
+        - generic [ref=e150]: "05"
+        - heading "Improve" [level=3] [ref=e151]
+        - paragraph [ref=e152]: Maintain, optimize, integrate, and enhance the platform over time.
+  - generic [ref=e154]:
+    - generic [ref=e155]:
+      - heading "Fast, reliable hosting for websites, apps, and APIs." [level=2] [ref=e156]
+      - paragraph [ref=e157]: Deploy business websites, web applications, APIs, and cloud-native services with a reliable hosting setup built for performance, security, and maintainability.
+    - generic [ref=e158]:
+      - generic [ref=e159]:
+        - generic [ref=e160]: Website and app hosting
+        - generic [ref=e165]: API hosting
+        - generic [ref=e170]: Cloud deployment support
+        - generic [ref=e175]: Domain and DNS setup
+        - generic [ref=e180]: SSL configuration
+        - generic [ref=e185]: Performance optimization
+        - generic [ref=e190]: Monitoring and maintenance
+        - generic [ref=e195]: Scalable infrastructure planning
+      - generic [ref=e200]:
+        - generic [ref=e201]: Infrastructure Status
+        - generic [ref=e204]:
+          - generic [ref=e205]:
+            - generic [ref=e206]: Production
+            - generic [ref=e207]: Live
+          - generic [ref=e209]:
+            - generic [ref=e210]: SSL
+            - generic [ref=e211]: Active
+          - generic [ref=e213]:
+            - generic [ref=e214]: DNS
+            - generic [ref=e215]: Configured
+          - generic [ref=e217]:
+            - generic [ref=e218]: Monitoring
+            - generic [ref=e219]: Enabled
+        - generic [ref=e221]:
+          - generic [ref=e222]: $ nimfi status --hosting
+          - generic [ref=e223]: ✓ All systems operational
+          - generic [ref=e224]: "Region: Southeast Asia"
+          - generic [ref=e225]: "Nodes: 4"
+          - generic [ref=e226]: "Uptime: 99.9%"
+  - generic [ref=e228]:
+    - generic [ref=e229]:
+      - heading "Web services that keep your platform running smoothly." [level=2] [ref=e230]
+      - paragraph [ref=e231]: Nimfi.dev supports the essential web services businesses need to launch, operate, integrate, and maintain their digital presence.
+    - generic [ref=e232]:
+      - generic [ref=e233]: Domain setup
+      - generic [ref=e238]: DNS configuration
+      - generic [ref=e243]: Business email setup
+      - generic [ref=e248]: Website maintenance
+      - generic [ref=e253]: API integration
+      - generic [ref=e258]: Analytics setup
+      - generic [ref=e263]: Performance tuning
+      - generic [ref=e268]: Backup and migration support
+  - generic [ref=e274]:
+    - heading "Why teams choose Nimfi.dev" [level=2] [ref=e276]
+    - generic [ref=e277]:
+      - generic [ref=e278]:
+        - heading "Developer-first approach" [level=3] [ref=e282]
+        - paragraph [ref=e283]: Every project is designed with clean architecture, maintainable code, and long-term scalability in mind.
+      - generic [ref=e284]:
+        - heading "Full-stack capability" [level=3] [ref=e288]
+        - paragraph [ref=e289]: From frontend and backend to hosting, AI, integrations, and security, Nimfi.dev supports the full digital product lifecycle.
+      - generic [ref=e290]:
+        - heading "Cloud-native mindset" [level=3] [ref=e294]
+        - paragraph [ref=e295]: Build and deploy platforms using modern infrastructure practices, scalable hosting, and reliable web technologies.
+      - generic [ref=e296]:
+        - heading "Security-aware delivery" [level=3] [ref=e300]
+        - paragraph [ref=e301]: Security is considered from planning to deployment, not treated as an afterthought.
+  - generic [ref=e303]:
+    - heading "Built for businesses, teams, and digital products." [level=2] [ref=e305]
+    - generic [ref=e306]:
+      - generic [ref=e307]:
+        - heading "SaaS Platforms" [level=3] [ref=e311]
+        - paragraph [ref=e312]: Build multi-tenant SaaS platforms with authentication, dashboards, APIs, organizations, roles, and billing-ready architecture.
+      - generic [ref=e313]:
+        - heading "Business Websites" [level=3] [ref=e317]
+        - paragraph [ref=e318]: Launch fast, modern, and maintainable websites for companies, agencies, services, and organizations.
+      - generic [ref=e319]:
+        - heading "Admin Systems" [level=3] [ref=e323]
+        - paragraph [ref=e324]: Create internal dashboards, management systems, reporting tools, and secure admin panels.
+      - generic [ref=e325]:
+        - heading "AI Automation" [level=3] [ref=e329]
+        - paragraph [ref=e330]: Automate repetitive business processes using AI workflows, chatbots, assistants, and API integrations.
+      - generic [ref=e331]:
+        - heading "Cloud Applications" [level=3] [ref=e335]
+        - paragraph [ref=e336]: Deploy web apps, APIs, and backend services on reliable cloud infrastructure.
+      - generic [ref=e337]:
+        - heading "Security Improvement" [level=3] [ref=e341]
+        - paragraph [ref=e342]: Improve the security posture of websites, servers, applications, and cloud environments.
+  - generic [ref=e344]:
+    - heading "Modern tools for modern platforms." [level=2] [ref=e346]
+    - generic [ref=e347]:
+      - generic [ref=e348]: Astro
+      - generic [ref=e349]: React
+      - generic [ref=e350]: TanStack
+      - generic [ref=e351]: Hono
+      - generic [ref=e352]: Node.js
+      - generic [ref=e353]: TypeScript
+      - generic [ref=e354]: PostgreSQL
+      - generic [ref=e355]: Drizzle ORM
+      - generic [ref=e356]: Cloudflare
+      - generic [ref=e357]: Vercel
+      - generic [ref=e358]: Docker
+      - generic [ref=e359]: Linux
+      - generic [ref=e360]: AI APIs
+      - generic [ref=e361]: Cybersecurity
+  - generic [ref=e363]:
+    - generic [ref=e364]:
+      - heading "Explore our projects." [level=2] [ref=e365]
+      - paragraph [ref=e366]: live projects built and maintained by Nimfi.dev.
+    - generic [ref=e367]:
+      - link [ref=e368] [cursor=pointer]:
+        - /url: https://app.nimfi.dev
+        - generic [ref=e369]: Live
+        - heading "Prepaid AI API Access" [level=3] [ref=e375]
+        - paragraph [ref=e376]: Prepaid AI API platform — buy credits, use AI models, scale your applications with ease.
+        - generic [ref=e377]: Visit site
+      - link [ref=e380] [cursor=pointer]:
+        - /url: https://emasa.nimfi.dev
+        - generic [ref=e381]: Live
+        - heading "Emasa" [level=3] [ref=e387]
+        - paragraph [ref=e388]: Official portal for Emasa — digital services and information platform.
+        - generic [ref=e389]: Visit site
+  - generic [ref=e393]:
+    - heading "Ready to build your next digital platform?" [level=2] [ref=e394]
+    - paragraph [ref=e395]: Let Nimfi.dev help you design, build, host, automate, and secure your next software, AI, cloud, or web project.
+    - generic [ref=e396]:
+      - link "Explore Project" [ref=e397] [cursor=pointer]:
+        - /url: "#"
+      - link "Contact Us" [ref=e400] [cursor=pointer]:
+        - /url: "#contact"
+  - contentinfo [ref=e401]:
+    - generic [ref=e402]:
+      - generic [ref=e403]:
+        - generic [ref=e404]:
+          - heading "Company" [level=3] [ref=e405]
+          - list [ref=e406]:
+            - listitem [ref=e407]:
+              - link "About" [ref=e408] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e409]:
+              - link "Work" [ref=e410] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e411]:
+              - link "Contact" [ref=e412] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=e413]:
+          - heading "Services" [level=3] [ref=e414]
+          - list [ref=e415]:
+            - listitem [ref=e416]:
+              - link "Software Development" [ref=e417] [cursor=pointer]:
+                - /url: "#services"
+            - listitem [ref=e418]:
+              - link "AI Platform" [ref=e419] [cursor=pointer]:
+                - /url: "#ai-platform"
+            - listitem [ref=e420]:
+              - link "Web and Cloud Hosting" [ref=e421] [cursor=pointer]:
+                - /url: "#hosting"
+            - listitem [ref=e422]:
+              - link "Web Services" [ref=e423] [cursor=pointer]:
+                - /url: "#web-services"
+        - generic [ref=e424]:
+          - heading "Resources" [level=3] [ref=e425]
+          - list [ref=e426]:
+            - listitem [ref=e427]:
+              - link "Docs" [ref=e428] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e429]:
+              - link "Blog" [ref=e430] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e431]:
+              - link "Status" [ref=e432] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e433]:
+              - link "Changelog" [ref=e434] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=e435]:
+          - heading "Legal" [level=3] [ref=e436]
+          - list [ref=e437]:
+            - listitem [ref=e438]:
+              - link "Privacy" [ref=e439] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e440]:
+              - link "Terms" [ref=e441] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e442]:
+              - link "Security" [ref=e443] [cursor=pointer]:
+                - /url: "#"
+      - generic [ref=e444]:
+        - paragraph [ref=e445]: nimfi.dev
+        - paragraph [ref=e446]: Nimfi.dev — Build smarter. Host faster.
+        - paragraph [ref=e447]: © 2026 Nimfi.dev. All rights reserved.
+  - generic [ref=e450]:
+    - button [ref=e451]
+    - button [ref=e457]
+    - button [ref=e461]
+    - button [ref=e466]

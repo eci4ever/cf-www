@@ -13,21 +13,20 @@ const features = [
 interface StatusItem {
   label: string;
   value: string;
-  color: "green" | "cyan" | "blue" | "purple";
+  color: "green" | "cyan" | "blue";
 }
 
 const statuses: StatusItem[] = [
   { label: "Production", value: "Live", color: "green" },
   { label: "SSL", value: "Active", color: "cyan" },
   { label: "DNS", value: "Configured", color: "blue" },
-  { label: "Monitoring", value: "Enabled", color: "purple" },
+  { label: "Monitoring", value: "Enabled", color: "green" },
 ];
 
 const colorClasses: Record<string, { dot: string; text: string }> = {
   green: { dot: "bg-green-400", text: "text-green-400" },
   cyan: { dot: "bg-cyan-400", text: "text-cyan-400" },
   blue: { dot: "bg-blue-400", text: "text-blue-400" },
-  purple: { dot: "bg-purple-400", text: "text-purple-400" },
 };
 ---
 

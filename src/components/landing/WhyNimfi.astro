@@ -26,6 +26,21 @@ const reasons = [
   },
 ];
 
+const technologies = [
+  "Astro",
+  "React",
+  "TanStack",
+  "Hono",
+  "Node.js",
+  "TypeScript",
+  "PostgreSQL",
+  "Drizzle ORM",
+  "Cloudflare",
+  "Vercel",
+  "Docker",
+  "Linux",
+];
+
 const iconPaths: Record<string, string> = {
   terminal:
     "m6.75 7.5 3 2.25-3 2.25m4.5 4.5H12m9-4.5v9a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 18.75V5.25a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 5.25v9Z",
@@ -57,6 +72,14 @@ const iconPaths: Record<string, string> = {
           <h3 class="mb-2 text-lg font-semibold text-text-primary">{reason.title}</h3>
           <p class="text-sm leading-relaxed text-text-muted">{reason.description}</p>
         </div>
+      ))}
+    </div>
+
+    <div class="mt-12 flex flex-wrap justify-center gap-3">
+      {technologies.map((tech) => (
+        <span class="inline-flex items-center rounded-full border border-border bg-surface px-4 py-2 text-sm text-text-secondary transition-all duration-300 hover:border-border-hover hover:bg-surface-hover hover:text-text-primary">
+          {tech}
+        </span>
       ))}
     </div>
   </div>
