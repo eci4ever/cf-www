@@ -46,77 +46,105 @@
 </div>
 
 <script>
-  const btn = document.getElementById("theme-toggle");
-  const menu = document.getElementById("theme-menu");
-  const options = Array.from(document.querySelectorAll("[data-theme]"));
-  const btnSun = document.getElementById("icon-sun");
-  const btnMoon = document.getElementById("icon-moon");
+  let controller: AbortController | undefined;
 
-  function storedTheme(): string {
-    const stored = localStorage.getItem("theme");
-    return stored === "dark" || stored === "light" ? stored : "system";
-  }
+  function setupThemeToggle() {
+    controller?.abort();
+    controller = new AbortController();
+    const { signal } = controller;
 
-  function isSystemDark(): boolean {
-    return window.matchMedia("(prefers-color-scheme: dark)").matches;
-  }
+    const btn = document.getElementById("theme-toggle");
+    const menu = document.getElementById("theme-menu");
+    const options = Array.from(document.querySelectorAll<HTMLElement>("[data-theme]"));
+    const btnSun = document.getElementById("icon-sun");
+    const btnMoon = document.getElementById("icon-moon");
+    if (!btn || !menu) return;
 
-  function apply(theme: string): void {
-    const dark = theme === "dark" || (theme === "system" && isSystemDark());
+    function storedTheme(): string {
+      const stored = localStorage.getItem("theme");
+      return stored === "dark" || stored === "light" ? stored : "system";
+    }
 
-    document.documentElement.classList.toggle("dark", dark);
-    document.documentElement.style.colorScheme = dark ? "dark" : "light";
+    function isSystemDark(): boolean {
+      return window.matchMedia("(prefers-color-scheme: dark)").matches;
+    }
 
-    btnSun?.classList.toggle("hidden", dark);
-    btnMoon?.classList.toggle("hidden", !dark);
+    function apply(theme: string): void {
+      const dark = theme === "dark" || (theme === "system" && isSystemDark());
+
+      document.documentElement.classList.toggle("dark", dark);
+      document.documentElement.style.colorScheme = dark ? "dark" : "light";
+
+      btnSun?.classList.toggle("hidden", dark);
+      btnMoon?.classList.toggle("hidden", !dark);
+
+      options.forEach((option) => {
+        const active = option.dataset.theme === theme;
+        option.classList.toggle("text-accent", active);
+        option.classList.toggle("bg-accent-soft", active);
+        option.classList.toggle("text-text-muted", !active);
+        option.setAttribute("aria-pressed", String(active));
+      });
+
+      if (theme === "dark") {
+        localStorage.setItem("theme", "dark");
+      } else if (theme === "light") {
+        localStorage.setItem("theme", "light");
+      } else {
+        localStorage.removeItem("theme");
+      }
+    }
+
+    function toggleMenu(open: boolean): void {
+      menu.classList.toggle("hidden", !open);
+      btn.setAttribute("aria-expanded", String(open));
+    }
+
+    btn.addEventListener(
+      "click",
+      () => {
+        const isOpen = !menu.classList.contains("hidden");
+        toggleMenu(!isOpen);
+      },
+      { signal }
+    );
 
     options.forEach((option) => {
-      const active = option.dataset.theme === theme;
-      option.classList.toggle("text-accent", active);
-      option.classList.toggle("bg-accent-soft", active);
-      option.classList.toggle("text-text-muted", !active);
-      option.setAttribute("aria-pressed", String(active));
+      option.addEventListener(
+        "click",
+        () => {
+          apply(option.dataset.theme ?? "system");
+          toggleMenu(false);
+        },
+        { signal }
+      );
     });
 
-    if (theme === "dark") {
-      localStorage.setItem("theme", "dark");
-    } else if (theme === "light") {
-      localStorage.setItem("theme", "light");
-    } else {
-      localStorage.removeItem("theme");
-    }
+    document.addEventListener(
+      "click",
+      (event) => {
+        const target = event.target as Node;
+        if (!menu.contains(target) && !btn.contains(target)) {
+          toggleMenu(false);
+        }
+      },
+      { signal }
+    );
+
+    window
+      .matchMedia("(prefers-color-scheme: dark)")
+      .addEventListener(
+        "change",
+        () => {
+          if (storedTheme() === "system") apply("system");
+        },
+        { signal }
+      );
+
+    apply(storedTheme());
   }
 
-  function toggleMenu(open: boolean): void {
-    menu?.classList.toggle("hidden", !open);
-    btn?.setAttribute("aria-expanded", String(open));
-  }
-
-  btn?.addEventListener("click", () => {
-    const isOpen = !menu?.classList.contains("hidden");
-    toggleMenu(!isOpen);
-  });
-
-  options.forEach((option) => {
-    option.addEventListener("click", () => {
-      apply(option.dataset.theme ?? "system");
-      toggleMenu(false);
-    });
-  });
-
-  document.addEventListener("click", (event) => {
-    if (!menu || !btn) return;
-    const target = event.target as Node;
-    if (!menu.contains(target) && !btn.contains(target)) {
-      toggleMenu(false);
-    }
-  });
-
-  window
-    .matchMedia("(prefers-color-scheme: dark)")
-    .addEventListener("change", () => {
-      if (storedTheme() === "system") apply("system");
-    });
-
-  apply(storedTheme());
+  // Skrip module hanya dijalankan sekali walaupun ClientRouter menukar DOM,
+  // jadi listener perlu di-rebind selepas setiap navigasi.
+  document.addEventListener("astro:page-load", setupThemeToggle);
 </script>

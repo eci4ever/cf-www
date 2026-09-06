@@ -31,13 +31,20 @@ const { title, description } = Astro.props;
 
     <script is:inline>
       (function () {
-        var stored = localStorage.getItem("theme");
-        var theme = stored === "dark" || stored === "light" ? stored : "system";
-        var dark =
-          theme === "dark" ||
-          (theme === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches);
-        document.documentElement.classList.toggle("dark", dark);
-        document.documentElement.style.colorScheme = dark ? "dark" : "light";
+        function applyTheme() {
+          var stored = localStorage.getItem("theme");
+          var theme = stored === "dark" || stored === "light" ? stored : "system";
+          var dark =
+            theme === "dark" ||
+            (theme === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches);
+          document.documentElement.classList.toggle("dark", dark);
+          document.documentElement.style.colorScheme = dark ? "dark" : "light";
+        }
+        applyTheme();
+        // ClientRouter swap menggantikan atribut <html> dengan HTML statik
+        // (tiada class "dark"), dan skrip inline ini tak dijalankan semula
+        // kerana Astro dedupe skrip identik — jadi re-apply selepas swap.
+        document.addEventListener("astro:after-swap", applyTheme);
       })();
     </script>
   </head>

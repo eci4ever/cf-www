@@ -70,25 +70,44 @@ import ThemeToggle from "../ThemeToggle.astro";
 </nav>
 
 <script>
-  const toggle = document.getElementById("menu-toggle");
-  const menu = document.getElementById("mobile-menu");
-  const menuIcon = document.getElementById("menu-icon");
-  const closeIcon = document.getElementById("close-icon");
+  let controller: AbortController | undefined;
 
-  if (toggle && menu) {
-    toggle.addEventListener("click", () => {
-      const isOpen = !menu.classList.contains("hidden");
-      menu.classList.toggle("hidden");
-      menuIcon?.classList.toggle("hidden");
-      closeIcon?.classList.toggle("hidden");
-    });
+  function setupMobileMenu() {
+    controller?.abort();
+    controller = new AbortController();
+    const { signal } = controller;
+
+    const toggle = document.getElementById("menu-toggle");
+    const menu = document.getElementById("mobile-menu");
+    const menuIcon = document.getElementById("menu-icon");
+    const closeIcon = document.getElementById("close-icon");
+
+    if (!toggle || !menu) return;
+
+    toggle.addEventListener(
+      "click",
+      () => {
+        const isOpen = !menu.classList.contains("hidden");
+        menu.classList.toggle("hidden");
+        menuIcon?.classList.toggle("hidden");
+        closeIcon?.classList.toggle("hidden");
+      },
+      { signal }
+    );
 
     document.querySelectorAll("#mobile-menu a").forEach((link) => {
-      link.addEventListener("click", () => {
-        menu.classList.add("hidden");
-        menuIcon?.classList.remove("hidden");
-        closeIcon?.classList.add("hidden");
-      });
+      link.addEventListener(
+        "click",
+        () => {
+          menu.classList.add("hidden");
+          menuIcon?.classList.remove("hidden");
+          closeIcon?.classList.add("hidden");
+        },
+        { signal }
+      );
     });
   }
+
+  // Rebind selepas setiap navigasi ClientRouter — DOM diganti sepenuhnya.
+  document.addEventListener("astro:page-load", setupMobileMenu);
 </script>
