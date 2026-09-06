@@ -63,9 +63,9 @@ const iconPaths: Record<string, string> = {
 
     <div class="grid gap-5 sm:grid-cols-2">
       {reasons.map((reason) => (
-        <div class="group rounded-2xl border border-border bg-surface p-6 transition-all duration-300 hover:-translate-y-1 hover:border-border-hover hover:bg-surface-hover sm:p-8">
+        <div class="group rounded-2xl border border-border bg-surface p-6 transition-[transform,border-color,background-color] duration-300 hover:-translate-y-1 hover:border-border-hover hover:bg-surface-hover sm:p-8">
           <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-accent-soft">
-            <svg class="h-5 w-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <svg class="h-5 w-5 text-accent" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
               <path stroke-linecap="round" stroke-linejoin="round" d={iconPaths[reason.icon]} />
             </svg>
           </div>
@@ -77,7 +77,7 @@ const iconPaths: Record<string, string> = {
 
     <div class="mt-12 flex flex-wrap justify-center gap-3">
       {technologies.map((tech) => (
-        <span class="inline-flex items-center rounded-full border border-border bg-surface px-4 py-2 text-sm text-text-secondary transition-all duration-300 hover:border-border-hover hover:bg-surface-hover hover:text-text-primary">
+        <span class="inline-flex items-center rounded-full border border-border bg-surface px-4 py-2 text-sm text-text-secondary transition-[border-color,background-color,color] duration-300 hover:border-border-hover hover:bg-surface-hover hover:text-text-primary">
           {tech}
         </span>
       ))}

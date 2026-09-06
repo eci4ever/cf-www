@@ -18,9 +18,9 @@ const iconMap: Record<string, string> = {
 };
 ---
 
-<div class="group relative overflow-hidden rounded-2xl border border-border bg-surface p-6 transition-all duration-300 hover:-translate-y-1 hover:border-border-hover hover:bg-surface-hover sm:p-8">
+<div class="group relative overflow-hidden rounded-2xl border border-border bg-surface p-6 transition-[transform,border-color,background-color] duration-300 hover:-translate-y-1 hover:border-border-hover hover:bg-surface-hover sm:p-8">
   <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-accent-soft">
-    <svg class="h-5 w-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+    <svg class="h-5 w-5 text-accent" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
       <path stroke-linecap="round" stroke-linejoin="round" d={iconMap[icon] || iconMap.code} />
     </svg>
   </div>
