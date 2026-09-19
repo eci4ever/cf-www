@@ -4,31 +4,31 @@ const steps = [
     number: "01",
     title: "Discover",
     description: "Plan the product, requirements, users, architecture, and technical direction.",
-    color: "cyan",
+    hoverNumber: "group-hover:text-cyan-400/20",
   },
   {
     number: "02",
     title: "Build",
     description: "Develop the software, platform, API, website, dashboard, or automation workflow.",
-    color: "blue",
+    hoverNumber: "group-hover:text-blue-400/20",
   },
   {
     number: "03",
     title: "Deploy",
     description: "Launch on reliable web or cloud hosting with performance and scalability in mind.",
-    color: "cyan",
+    hoverNumber: "group-hover:text-cyan-400/20",
   },
   {
     number: "04",
     title: "Secure",
     description: "Apply cybersecurity best practices, access control, monitoring, and system hardening.",
-    color: "green",
+    hoverNumber: "group-hover:text-green-400/20",
   },
   {
     number: "05",
     title: "Improve",
     description: "Maintain, optimize, integrate, and enhance the platform over time.",
-    color: "cyan",
+    hoverNumber: "group-hover:text-cyan-400/20",
   },
 ];
 ---
@@ -48,7 +48,7 @@ const steps = [
       {steps.map((step, i) => (
         <>
           <div class="group relative flex-1 rounded-2xl border border-border bg-surface p-6 transition-[transform,border-color,background-color] duration-300 hover:-translate-y-1 hover:border-border-hover hover:bg-surface-hover">
-            <span class="mb-3 block text-3xl font-bold text-text-decorative transition-colors duration-300 group-hover:text-{step.color}-400/20">{step.number}</span>
+            <span class={`mb-3 block text-3xl font-bold text-text-decorative transition-colors duration-300 ${step.hoverNumber}`}>{step.number}</span>
             <h3 class="mb-2 text-lg font-semibold text-text-primary">{step.title}</h3>
             <p class="text-sm leading-relaxed text-text-muted">{step.description}</p>
           </div>

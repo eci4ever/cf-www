@@ -20,8 +20,7 @@ const { title, description } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f6f7f9" />
-    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0a0a0a" />
+    <meta name="theme-color" content="#f6f7f9" />
 
     <link rel="preload" as="font" type="font/woff2" href={interLatin400} crossorigin />
     <link rel="preload" as="font" type="font/woff2" href={interLatin600} crossorigin />
@@ -46,6 +45,8 @@ const { title, description } = Astro.props;
             (theme === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches);
           document.documentElement.classList.toggle("dark", dark);
           document.documentElement.style.colorScheme = dark ? "dark" : "light";
+          var meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) meta.setAttribute("content", dark ? "#0a0a0a" : "#f6f7f9");
         }
         applyTheme();
         // ClientRouter swap menggantikan atribut <html> dengan HTML statik
