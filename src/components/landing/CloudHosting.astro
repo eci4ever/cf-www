@@ -17,9 +17,9 @@ interface StatusItem {
 }
 
 const statuses: StatusItem[] = [
-  { label: "Production", value: "Live", color: "green" },
-  { label: "SSL", value: "Active", color: "cyan" },
-  { label: "DNS", value: "Configured", color: "blue" },
+  { label: "SSL", value: "Automatic", color: "green" },
+  { label: "DNS", value: "Managed", color: "cyan" },
+  { label: "Deploys", value: "Git-powered", color: "blue" },
   { label: "Monitoring", value: "Enabled", color: "green" },
 ];
 
@@ -59,7 +59,7 @@ const colorClasses: Record<string, { dot: string; text: string }> = {
       <div class="rounded-2xl border border-border bg-surface p-6 backdrop-blur-sm">
         <div class="mb-4 flex items-center gap-2">
           <span class="h-2 w-2 rounded-full bg-cyan-400"></span>
-          <span class="text-xs font-medium text-accent">Infrastructure Status</span>
+          <span class="text-xs font-medium text-accent">Hosting setup — included</span>
         </div>
 
         <div class="grid grid-cols-2 gap-4">
@@ -78,11 +78,12 @@ const colorClasses: Record<string, { dot: string; text: string }> = {
         </div>
 
         <div class="mt-4 rounded-lg border border-white/5 bg-nimfi-950/50 p-4 font-mono text-xs">
-          <div class="text-slate-600">$ <span class="text-cyan-400">nimfi</span> status --hosting</div>
-          <div class="mt-1 text-green-400">✓ All systems operational</div>
-          <div class="text-slate-500">Region: Southeast Asia</div>
-          <div class="text-slate-500">Nodes: 4</div>
-          <div class="text-slate-500">Uptime: 99.9%</div>
+          <div class="text-slate-600">$ <span class="text-cyan-400">nimfi</span> deploy --hosting</div>
+          <div class="mt-1 text-green-400">✓ Git push to deploy</div>
+          <div class="text-green-400">✓ SSL and DNS configured</div>
+          <div class="mt-1 text-cyan-400">✓ Deployed on Cloudflare</div>
+          <div class="mt-1 text-slate-500">Platform: Cloudflare Pages &amp; Workers</div>
+          <div class="text-slate-500">Network: Global edge</div>
         </div>
       </div>
     </div>
