@@ -14,6 +14,13 @@ const projects = [
     domain: "tapme.nimfi.dev",
     tag: "Live",
   },
+  {
+    title: "Nimfi Koop",
+    description: "Cooperative platform — members, roles, and invitations in one place.",
+    url: "https://cf-org.nimfi.dev",
+    domain: "cf-org.nimfi.dev",
+    tag: "Live",
+  },
 ];
 ---
 
@@ -28,7 +35,7 @@ const projects = [
       </p>
     </div>
 
-    <div class="mx-auto grid max-w-3xl gap-6 sm:grid-cols-2">
+    <div class="mx-auto grid max-w-3xl gap-6 sm:grid-cols-2 lg:max-w-5xl lg:grid-cols-3">
       {projects.map((project) => (
         <a
           href={project.url}
