@@ -1,9 +1,9 @@
 ---
 import "../styles/global.css";
 import SEO from "../components/SEO.astro";
-import ClientRouter from "astro/components/ClientRouter.astro";
 import interLatin400 from "@fontsource/inter/files/inter-latin-400-normal.woff2";
 import interLatin600 from "@fontsource/inter/files/inter-latin-600-normal.woff2";
+import serifLatin400 from "@fontsource/instrument-serif/files/instrument-serif-latin-400-normal.woff2";
 
 export interface Props {
   title?: string;
@@ -19,47 +19,24 @@ const { title, description } = Astro.props;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="theme-color" content="#f6f7f9" />
-
-    <link rel="preload" as="font" type="font/woff2" href={interLatin400} crossorigin />
-    <link rel="preload" as="font" type="font/woff2" href={interLatin600} crossorigin />
+    <meta name="theme-color" content="#f6f5f2" />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
-    <ClientRouter />
-
     <title>{title ? `${title} | Nimfi.dev` : "Nimfi.dev — Build smarter. Host faster."}</title>
 
     <SEO title={title} description={description} />
 
-    <script is:inline>
-      (function () {
-        function applyTheme() {
-          var stored = localStorage.getItem("theme");
-          var theme = stored === "dark" || stored === "light" ? stored : "system";
-          var dark =
-            theme === "dark" ||
-            (theme === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches);
-          document.documentElement.classList.toggle("dark", dark);
-          document.documentElement.style.colorScheme = dark ? "dark" : "light";
-          var meta = document.querySelector('meta[name="theme-color"]');
-          if (meta) meta.setAttribute("content", dark ? "#0a0a0a" : "#f6f7f9");
-        }
-        applyTheme();
-        // ClientRouter swap menggantikan atribut <html> dengan HTML statik
-        // (tiada class "dark"), dan skrip inline ini tak dijalankan semula
-        // kerana Astro dedupe skrip identik — jadi re-apply selepas swap.
-        document.addEventListener("astro:after-swap", applyTheme);
-      })();
-    </script>
+    <link rel="preload" as="font" type="font/woff2" href={interLatin400} crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href={interLatin600} crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href={serifLatin400} crossorigin />
   </head>
   <body>
     <a
       href="#main"
-      class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-band focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-text-primary focus:shadow-lg"
+      class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-surface focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-ink focus:shadow-lg"
     >
       Skip to content
     </a>
